@@ -5,26 +5,23 @@ $(document).ready(function(){
     return false;
   });
 
-  //function slide_r()
-	//{
-	//	$('.cigarettes-galllery__item_in').css('height',$(window).height()+($('.head-forslider').outerHeight(true)*(-1)-20)+'px');
-	//}
-	//$(window).resize(function()
-	//{
-  //  slide_r();
-	//});
-	//section__text_r();
-	
-	//$(window).on("load", function()
-	//{
-	//	slide_r();
-	//});
+  if (document.documentElement.clientWidth < 768) {
+      $('.page-nav').click(function() {
+      $( this ).toggleClass('open');
+      return false;
+    });
+  }
+
+
+
+
 
 
 
   function height_r()
 	{
 		$('.header-wrapper').css('height',$('.header-out').height()+'px');
+		$('.footer-wrapper').css('height',$('.footer-out').outerHeight(true)+'px');
 	}
 	$(window).resize(function()
 	{

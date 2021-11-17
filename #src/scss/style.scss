@@ -89,6 +89,13 @@ p {
 	padding: 0;
 	margin: 15px 0;
   line-height: 150%;
+  @include respond-to(tablet) {
+    font-size: 14px;
+  }
+}
+form {
+  margin: 0;
+  padding: 0;
 }
 .nowrap {
   white-space: nowrap
@@ -119,9 +126,14 @@ p {
 .text-center {
   text-align: center;
 }
+.text-blue {
+  color: #0F233F;
+}
+
 .w-100 {
   width: 100% !important;
 }
+
 
 .container {
   overflow: hidden;
@@ -132,8 +144,8 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  //padding: 0 20px;
   background: #fff;
+  border-bottom: 1px solid #EFF2F9;
   z-index: 99;
 }
 .header-wrapper {
@@ -601,6 +613,7 @@ p {
   margin: 20px 0;
 }
 .search-inp {
+  display: block;
   max-width: 100%;
   width: 380px;
   height: 40px;
@@ -804,14 +817,20 @@ p {
     font-size: 13px;
     padding: 13px 40px;
   }
+  &_small {
+    padding: 10px 40px;
+    border-radius: 20px;
 
-
+    @include respond-to(mobile) {
+      font-size: 13px;
+      padding: 10px 40px;
+    }
+  }
   &_blue {
     background: #004584;
     border: #004584 1px solid;
     color: #fff;
   }
-
   @include respond-to(hov) {
     &_blue:hover {
       background: #FF8515;
@@ -826,7 +845,6 @@ p {
     border: #004584 1px solid;
     color: #004584;
   }
-
   @include respond-to(hov) {
     &_blue-border:hover {
       background: #004584;
@@ -853,7 +871,7 @@ p {
 .head {
   font-weight: normal;
   font-size: 38px;
-  line-height: 46px;
+  line-height: 1.21;
   margin: 32px 0;
   padding: 0;
 
@@ -865,7 +883,24 @@ p {
     font-size: 28px;
     margin: 20px 0;
   }
+  & i.head-ico {
+    display: inline-block;
+    vertical-align: middle;
+    width: 62px;
+    margin-right: 30px;
 
+    @include respond-to(tablet) {
+      width: 42px;
+      margin-right: 20px;
+    }
+    @include respond-to(mobile) {
+      width: 42px;
+      margin-right: 10px;
+    }
+  }
+  & i.head-ico img {
+    max-width: 100%;
+  }
   &_black {
     color: #0F233F;
   }
@@ -1168,7 +1203,7 @@ p {
     left: 0;
     width: 25px;
     height: 25px;
-    background: url("../img/ico_tick.svg") no-repeat center center;
+    background: url("../img/ico_tick.svg") no-repeat center center / contain;
 
     @include respond-to(tablet) {
       width: 22px;
@@ -1180,7 +1215,8 @@ p {
   margin: 0 0 25px 0;
   text-align: center;
 }
-.link-blue {
+.link-blue,
+a.link-blue {
   color: #004584;
 }
 .opportunity-btn {
@@ -1508,16 +1544,28 @@ p {
     text-align: center;
   }
 }  
+
+.container-in > div:last-of-type {
+  margin-bottom: 0 !important;
+}
+
 .footer-out {
+  margin-top: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   background: linear-gradient(103.97deg, #0F4881 16.33%, #0E2C4E 79.32%);
   padding-top: 58px;
   padding-bottom: 58px;
 
   @include respond-to(tablet) {
+    margin-top: 60px;
     padding-top: 50px;
     padding-bottom: 50px;
   }  
   @include respond-to(mobile) {
+    margin-top: 40px;
     padding-top: 35px;
     padding-bottom: 35px;
     font-size: 13px;
@@ -1614,6 +1662,7 @@ p {
   position: relative;
 }
 .search-inp_f {
+  display: block;
   max-width: 100%;
   width: 100%;
   height: 40px;
@@ -1626,6 +1675,7 @@ p {
   padding: 0 40px 0 45px;
 }
 .search-btn_f {
+  display: block;
   cursor: pointer;
   position: absolute;
   top: 0;
@@ -1710,9 +1760,723 @@ p {
     text-align: center;
   }
 }
-//@include respond-to(tablet) {
-//  padding: 40px 0;
-//}
-//@include respond-to(mobile) {
-//  padding: 30px 0;
-//}
+
+.breadcrumbs {
+  margin: 30px 0;
+  
+  @include respond-to(tablet) {
+    margin: 20px auto;
+  }
+  & > ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  & > ul > li {
+    margin: 0;
+    padding: 0;
+  }
+  & > ul > li::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 4px;
+    height: 4px;
+    border-right: #9DA7B6 1px solid;
+    border-bottom: #9DA7B6 1px solid;
+    transform: rotate(-45deg);
+    margin: 0 5px;
+  }
+  & > ul > li:last-child::after {
+    display: none;
+  }
+  & > ul > li a {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 150%;
+    color: #9DA7B6;
+    text-decoration: none;
+  }
+  & > ul > li:last-child a {
+    pointer-events: none;
+    cursor: default;
+  }
+  @include respond-to(hov) {
+    & > ul > li a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.page-nav {
+  margin: 55px auto;
+
+  @include respond-to(tablet) {
+    margin: 50px auto;
+  }
+  @include respond-to(mobile) {
+    margin: 25px auto;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #004584;
+  }
+
+  & > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: -10px;
+    padding: 0;
+    list-style: none;
+    @include respond-to(mobile) {
+      margin: 0 -10px;
+    }
+  }
+  & > ul > li {
+    flex: 1 1 0;
+    margin: 10px;
+    padding: 0;
+
+    @include respond-to(tablet) {
+      flex: 0 1 220px;
+    }
+    @include respond-to(mobile) {
+      flex: 1 1 100%;
+      margin: 0 10px;
+    }
+  }
+
+  & > ul > li a {
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #004584;
+    text-decoration: none;
+    background: #FFFFFF;
+    border: 1px solid #004584;
+    border-radius: 6px;
+    padding: 17px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+
+    @include respond-to(tablet) {
+      max-width: 220px;
+    }
+    @include respond-to(mobile) {
+      font-size: 13px;
+      max-width: none;
+      border-radius: 0px;
+      border: 0px solid #004584;
+      //border-bottom: 1px solid #ff00ff;
+    }
+  }  
+  @include respond-to(hov) {
+    & > ul > li a:hover {
+      color: #fff;
+      background: #004584;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+  }
+  & > ul > li.active a {
+    color: #fff;
+    background: #004584;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  & > ul > li.active {  
+    @include respond-to(mobile) {
+      order: -1;
+      border-bottom: 0px solid #EFF2F9;
+    }
+  }
+  & > ul > li.active a::after {
+    @include respond-to(mobile) {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      margin: -3px 0 0 0;
+      width: 0;
+    	height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid rgba(255,255,255,0.5);
+    }
+  }
+  &.open > ul > li.active a::after {
+    @include respond-to(mobile) {
+      border-bottom: 6px solid rgba(255,255,255,0.5);
+      border-top: 0px solid rgba(255,255,255,0.5);
+    }
+  }
+  @include respond-to(mobile) {
+    & li:not(.active) a {
+      padding: 0 15px;
+      max-height: 0;
+      border-bottom: 0px solid #EFF2F9;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    &.open li:not(.active) a {
+      padding: 14px 15px;
+      max-height: 100px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      border-bottom: 1px solid #EFF2F9;
+    }
+  }
+}
+
+.o-nas__pic {
+  max-width: 100%;
+}
+.target-content {
+  margin: 70px 0;
+  padding: 38px 40px;
+  color: #fff;
+  background: url("../img/bg_target.svg") no-repeat center center / cover;
+  border-radius: 4px;
+  @include respond-to(tablet) {
+    margin: 35px -1.3334rem;
+    padding: 35px 20px;
+    border-radius: 0px;
+  }
+  @include respond-to(mobile) {
+    margin: 20px -1.3334rem;
+    padding: 30px 20px;
+    border-radius: 0px;
+  }
+
+}
+
+.head-sub {
+  font-weight: bold;
+  font-size: 21px;
+  line-height: 1.24;
+  color: #FFFFFF;
+  margin: 40px 0;
+  padding: 0;
+  @include respond-to(tablet) {
+    font-size: 16px;
+    margin: 35px 0;
+  }
+  @include respond-to(mobile) {
+    font-size: 15px;
+    margin: 30px 0;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: -20px;
+  margin-bottom: -20px;
+  padding: 0;
+  list-style: none;
+  @include respond-to(tablet) {
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
+
+  & li {
+    display: flex;
+    margin: 0 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    @include respond-to(tablet) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  }
+  & li .list__number {
+    width: 51px;
+    height: 51px;
+    background: rgba(255, 133, 21, 0.3);
+    border-radius: 50%;
+    margin: -2px 27px 0 0;
+    @include respond-to(mobile) {
+      width: 38px;
+      height: 38px;
+      margin: 0 9px 0 0;
+    }
+  }
+  & li .list__number > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: #FF8515;
+    border-radius: 50%;
+    margin: 8px auto;
+    font-weight: bold;
+    font-size: 15px;
+    color: #FFFFFF;
+    @include respond-to(mobile) {
+      width: 26px;
+      height: 26px;
+      margin: 6px auto;
+      font-size: 14px;
+    }
+  }
+  & li .list__text {
+    flex: 1 1 0;
+    font-size: 15px;
+    line-height: 150%;
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+    @include respond-to(mobile) {
+      font-size: 13px;
+    }
+  }
+}
+
+.advantages-items {
+  margin-top: 45px;
+  //margin-bottom: 45px;
+}
+.advantages-item {
+  display: flex;
+
+  & > div {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 10px rgba(1, 70, 166, 0.15);
+  border-radius: 4px;
+  padding: 35px 15px 25px 15px;
+  }
+  &__pic {
+    text-align: center;
+    margin: 0 0 20px 0;
+    @include respond-to(mobile) {
+      margin: 0 0 15px 0;
+    }
+  }
+  &__pic img {
+    @include respond-to(tablet) {
+      max-height: 80px;
+    }
+    @include respond-to(mobile) {
+      max-height: 70px;
+    }
+  }  
+  &__text {
+    text-align: center;
+
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+    @include respond-to(mobile) {
+      font-size: 13px;
+    }
+  }
+}
+
+.administrative-items {
+  margin: 15px 0;
+}
+.administrative__head {
+  font-weight: 500;
+  font-size: 21px;
+  text-transform: uppercase;
+  color: #0F233F;
+  margin: 10px 0;
+  padding: 0;
+  @include respond-to(tablet) {
+    font-size: 18px;
+  }
+  @include respond-to(mobile) {
+    font-size: 16px;
+  }
+}
+.administrative__head i {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 18px 0 0;
+
+  & img {
+    @include respond-to(tablet) {
+      width: 36px;
+    }
+  }
+}
+
+.administrative {
+
+  &__pic {
+    position: relative;
+    background: #ECECEC;
+    border: 1px solid #F2F4F6;
+    margin: 21px 0;
+    @include respond-to(tablet) {
+      margin: 20px 0 0px 0;
+    }
+  }
+  &__pic::before {
+    content: '';
+    display: block;
+    padding-top: 116%; 
+  }
+  &__pic img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+  &__desc {
+    margin-top: 21px;
+    margin-bottom: 21px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 15px;
+    line-height: 150%;
+
+    @include respond-to(tablet) {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      font-size: 14px;
+    }
+    @include respond-to(mobile) {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      font-size: 13px;
+    }
+    
+  }
+  &__name {
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 1.2;
+    color: #004584;
+    margin-bottom: 10px;
+    @include respond-to(tablet) {
+      font-size: 18px;
+    }
+    @include respond-to(mobile) {
+      font-size: 16px;
+    }
+  }
+  &__post {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+}
+.docs-items {
+  margin: 10px 0 55px 0;
+  @include respond-to(tablet) {
+    margin: 5px 0 45px 0;
+  }
+  @include respond-to(mobile) {
+    margin: 0px 0 35px 0;
+  }
+}
+
+.docs-item {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #EFF2F9;
+  margin: -1px 0 0 0;
+  padding: 30px 40px;
+  align-items: center;
+  @include respond-to(tablet) {
+    padding: 25px 30px;
+  }
+  @include respond-to(mobile) {
+    padding: 15px 15px;
+  }
+  
+  &__name-b {
+    flex: 1 1 0;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 21px;
+    text-transform: uppercase;
+    color: #0F233F;
+    margin: 0;
+    padding: 0;
+    @include respond-to(tablet) {
+      font-size: 18px;
+    }
+    @include respond-to(mobile) {
+      font-size: 16px;
+    }
+  }
+  
+  &__ico {
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    margin: 0 40px 0 0;
+
+    @include respond-to(tablet) {
+      width: 36px;
+      min-width: 36px;
+      height: 36px;
+    }
+    @include respond-to(mobile) {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &__text {
+    padding-right: 15px;
+  }
+
+  &__btn {
+    white-space: nowrap;
+
+    @include respond-to(mobile) {
+      text-align: center;
+      width: 100%;
+      padding-top: 10px;
+    }
+    
+  }
+}
+.ico-ustav {
+  background: url("../img/ico-ustav.svg") no-repeat center center / contain;
+}
+.ico-polozenie {
+  background: url("../img/ico-polozenie.svg") no-repeat center center / contain;
+}
+.ico-zajavlenie {
+  background: url("../img/ico-zajavlenie.svg") no-repeat center center / contain;
+}
+.ico-anketa {
+  background: url("../img/ico-anketa.svg") no-repeat center center / contain;
+}
+.ico-rekvizit {
+  background: url("../img/ico-rekvizit.svg") no-repeat center center / contain;
+}
+.ico-download {
+  display: inline-block;
+  vertical-align: middle;
+  width: 14px;
+  height: 17px;
+  margin: 0 10px 0 0;
+  background: url("../img/ico-download.svg") no-repeat center center / contain;
+}
+
+.join-items {
+  margin-top: 35px;
+  margin-bottom: 35px;
+  @include respond-to(tablet) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  @include respond-to(mobile) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+.join-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  & > div {
+    width: 100%;
+    border-radius: 6px;
+    padding: 35px 20px 40px 20px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 150%;
+    text-align: center;
+
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+    @include respond-to(mobile) {
+      font-size: 13px;
+    }
+  }
+  &__bg {
+    background: #004584 url("../img/bg_kv.png") no-repeat left bottom;
+  }
+  &__bg2 {
+    background: #004584 url("../img/bg_kv2.png") no-repeat right top;
+  }
+  &__bg3 {
+    background: #004584 url("../img/bg_kv3.png") no-repeat left bottom;
+  }
+  &__ico {
+    text-align: center;
+  }
+  &__name {
+    min-height: 52px;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin: 30px 0 12px 0;
+
+    @include respond-to(tablet) {
+      min-height: auto;
+    }
+  }
+}
+
+.two-column {
+  & .ico-tick-big {
+    column-count: 2;
+    @include respond-to(mobile) {
+      column-count: 1;
+    }
+  }
+  & .ico-tick-big li {
+    page-break-inside: avoid;
+    break-inside: avoid-column;
+  }  
+}
+.contact-column {
+  margin-bottom: 30px;
+}
+
+.contact-items {
+  width: 100%;
+  border: 1px solid #EFF2F9;
+  margin: 10px 0;
+}
+.contact-item {
+  border-top: 1px solid #EFF2F9;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  margin-top: -1px;
+
+  &__ico {
+    width: 98px;
+    min-width: 98px;
+    text-align: center;
+  }
+  &__text {
+    flex: 1 1 0;
+    font-size: 15px;
+    line-height: 120%;
+    padding: 0 15px 0 0;
+
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+    @include respond-to(mobile) {
+      font-size: 13px;
+    }
+
+    .text-blue {
+      display: inline-block;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+  }
+}
+
+.text-big {
+  font-size: 21px;
+  @include respond-to(tablet) {
+    font-size: 18px;
+  }
+  @include respond-to(mobile) {
+    font-size: 16px;
+  }
+}
+.contact-details {
+  padding: 20px 0 20px 98px;
+  color: #0F233F;
+  @media (max-width: 1200px){
+    padding: 20px 0 20px 20px;
+  }
+
+  &__line {
+    display: flex;
+    padding: 10px 0;
+
+    > div {
+      width: 50%;
+    }
+    > div:first-child {
+      font-weight: bold;
+    }
+  }
+}
+
+.partners-items {
+  margin-top: 30px;
+}
+.partners-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  & a {
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid #EFF2F9;
+    border-radius: 4px;
+    padding: 30px;
+    font-size: 18px;
+    color: #0F233F;
+    text-decoration: none;
+    text-align: center;
+    
+    @include respond-to(tablet) {
+      padding: 20px;
+      font-size: 16px;
+    }
+    @include respond-to(mobile) {
+      padding: 15px;
+      font-size: 14px;
+    }
+  }
+  @include respond-to(hov) {
+    & a:hover {
+      font-weight: bold;
+      color: #004584;
+    }  
+  }
+  
+  &__pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 82px;
+    margin-bottom: 27px;
+    @include respond-to(tablet) {
+      height: 60px;
+      margin-bottom: 15px;
+    }
+    @include respond-to(mobile) {
+      height: 40px;
+      margin-bottom: 10px;
+    }
+  }
+  &__pic img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &__text {
+  }
+}
+
+
+@include respond-to(tablet) {
+}
+@include respond-to(mobile) {
+}
+
