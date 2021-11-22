@@ -884,13 +884,12 @@ form {
   @include respond-to(mobile) {
     font-size: 28px;
     margin: 20px 0;
+    word-break: break-word;
   }
   &_ico {
     display: flex;
   }
   & i.head-ico {
-    //display: inline-block;
-    //vertical-align: middle;
     flex: 0 0 62px;
     width: 62px;
     margin-top: -7px;
@@ -1255,6 +1254,7 @@ a.link-blue {
   filter: drop-shadow(0px 0px 10px rgba(1, 70, 166, 0.15));
   border-radius: 4px;
   padding: 24px 32px;
+  margin: 0 0 20px 0;
 }
 .events-content {
   width: 100%;
@@ -1266,8 +1266,30 @@ a.link-blue {
   color: #fff;
   background: url("../img/bg_events.svg") no-repeat 90% 10%,
   linear-gradient(104.23deg, #0F4881 27.79%, #0E2C4E 120%);
+  margin: 0 0 20px 0;
 }
-.news-content, .events-content {
+.news-blue-content-items > div:nth-child(3n)  .news-blue-content {
+  background: #004584 url("../img/bg_kv.png") no-repeat left bottom;
+}
+.news-blue-content-items > div:nth-child(3n+2) .news-blue-content {
+  background: #004584 url("../img/bg_kv2.png") no-repeat right top;
+}
+.news-blue-content-items >div:nth-child(3n+1) .news-blue-content {
+  background: #004584 url("../img/bg_kv3.png") no-repeat left bottom;
+}
+
+.news-blue-content {
+  width: 100%;
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  padding: 24px 32px;
+  color: #fff;
+  //background: linear-gradient(104.23deg, #0F4881 27.79%, #0E2C4E 120%);
+  margin: 0 0 20px 0;
+}
+.news-content, .events-content, .news-blue-content {
   @include respond-to(tablet) {
     padding: 24px 20px;
   }
@@ -1277,16 +1299,18 @@ a.link-blue {
 }
 
 .news-content-b,
-.events-content-b {
+.events-content-b,
+.news-blue-content-b {
   flex: 1 1 0;
 }
 .news-data,
-.events-data {
+.events-data,
+.news-blue-data {
   display: flex;
   align-items: center;
   margin-bottom: 27px;
 
-  .news-content, .events-content {
+  .news-content, .events-content, .news-blue-content {
     @include respond-to(tablet) {
       margin-bottom: 27px;
     }
@@ -1296,7 +1320,8 @@ a.link-blue {
   }
 }
 .news-nubmer,
-.events-nubmer {
+.events-nubmer,
+.news-blue-nubmer {
   margin: 0 12px 0 0;
   & span {
     display: inline-block;
@@ -1321,25 +1346,29 @@ a.link-blue {
   border: 1px solid #0F233F;
   color: #0F233F;
 }
-.events-nubmer span {
+.events-nubmer span,
+.news-blue-nubmer span {
   border: 1px solid #fff;
   color: #fff;
 }
 
 .news-month,
-.events-month {
+.events-month,
+.news-blue-month {
   font-size: 12px;
   line-height: 120%;
 }
 .news-month {
   color: #0F233F;
 }
-.events-month {
+.events-month,
+.news-blue-month {
   color: #fff;
 }
 
 .news-head,
-.events-head {
+.events-head,
+.news-blue-head {
   margin-bottom: 22px;
   padding: 0;
   font-weight: bold;
@@ -1355,7 +1384,7 @@ a.link-blue {
   line-clamp: 3;
   box-orient: vertical;
 
-  .news-content, .events-content {
+  .news-content, .events-content, .news-blue-content {
     @include respond-to(tablet) {
       margin-bottom: 17px;
       font-size: 15px;
@@ -1370,19 +1399,22 @@ a.link-blue {
 .news-head {
   color: #0F233F;
 }
-.events-head {
+.events-head,
+.news-blue-head {
   color: #fff;
 }
 .news-head a {
   color: #0F233F;
   text-decoration: none;
 }
-.events-head a, .events-head a:hover {
+.events-head a, .events-head a:hover,
+.news-blue-head a, .news-blue-head a:hover {
   color: #fff;
   text-decoration: none;
 }
 .news-text,
-.events-text {
+.events-text,
+.news-blue-text {
   margin: 22px 0;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1393,7 +1425,7 @@ a.link-blue {
   -webkit-box-orient: vertical;
   line-clamp: 4;
   box-orient: vertical;
-  .news-content, .events-content {
+  .news-content, .events-content, .news-blue-content {
     @include respond-to(tablet) {
       margin: 17px 0;
     }
@@ -1403,11 +1435,12 @@ a.link-blue {
   }
 
 }
-.events-text {
+.events-text, .news-blue-text {
   color: #fff;
 }
 .news-more,
-.events-more {
+.events-more,
+.news-blue-more {
   text-align: right;
 }
 .link-more {
@@ -1419,7 +1452,8 @@ a.link-blue {
   }  
 }
 
-.events-more .link-more {
+.events-more .link-more,
+.news-blue-more .link-more {
   color: #fff;
 }
 .ico-more {
@@ -1434,20 +1468,22 @@ a.link-blue {
   border-right: #2F2F2F 1px solid;
   border-bottom: #2F2F2F 1px solid;
 }
-.events-more .ico-more {
+.events-more .ico-more,
+.news-blue-more .ico-more {
   border-right: #fff 1px solid;
   border-bottom: #fff 1px solid;
 }
 
 .news-btn,
-.events-btn {
-  margin: 44px 0 0 0;
+.events-btn,
+.news-blue-btn {
+  margin: 24px 0 0 0;
 
   @include respond-to(tablet) {
-    margin: 40px 0 0 0;
+    margin: 20px 0 0 0;
   }
   @include respond-to(mobile) {
-    margin: 35px 0 15px 0;
+    margin: 15px 0 15px 0;
   }
 
 }
@@ -1848,6 +1884,7 @@ a.link-blue {
     }
   }
   & > ul > li {
+    display: flex;
     flex: 1 1 0;
     margin: 10px;
     padding: 0;
@@ -1863,9 +1900,13 @@ a.link-blue {
 
   & > ul > li a {
     position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
     font-weight: bold;
     font-size: 14px;
+    line-height: 1.2;
     text-transform: uppercase;
     color: #004584;
     text-decoration: none;
@@ -2351,8 +2392,11 @@ a.link-blue {
 .two-column {
   & .ico-tick-big {
     column-count: 2;
+    column-gap: 30px;
+
     @include respond-to(mobile) {
       column-count: 1;
+      column-gap: 0px;
     }
   }
   & .ico-tick-big li {
@@ -2484,8 +2528,119 @@ a.link-blue {
     max-width: 100%;
     max-height: 100%;
   }
+}
 
+
+.tile-shadow {
+  margin-top: 30px;
+  &__item {
+    display: flex;
+  }
+  &__item > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 42px 20px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px rgba(1, 70, 166, 0.15);
+    border-radius: 4px;
+    text-align: center;
+  }
+  &__pic {
+    margin: 0 0 28px 0;
+  }
+
+  &__content {
+    flex: 1 1 0;
+    margin: 0 0 33px 0;
+  }
+
+  &__head {
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #0F233F;
+    @include respond-to(tablet) {
+      font-size: 16px;
+    }
+    @include respond-to(mobile) {
+      font-size: 15px;
+    }
+  }
   &__text {
+    margin: 16px 0 0 0;
+
+    @include respond-to(tablet) {
+      font-size: 14px;
+    }
+    @include respond-to(mobile) {
+      font-size: 13px;
+    }
+  }
+}
+
+.bg-kv {
+  background: url("../img/bg-kv.png") no-repeat left bottom;
+  @include respond-to(tablet) {
+    background: transparent;
+  }
+  @include respond-to(mobile) {
+    background: transparent;
+  }
+    
+}
+
+
+.window-out {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 101;
+}
+.window-in {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  margin: auto;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 20px rgba(0, 88, 209, 0.2);
+  border-radius: 4px;
+  padding: 50px 100px;
+
+  @include respond-to(tablet) {
+    padding: 50px 50px;
+  }
+  @include respond-to(mobile) {
+    padding: 50px 0px;
+  }
+  
+}
+.window-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 64px;
+  height: 64px;
+  & a {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url("../img/ico_close.svg") no-repeat left bottom;
+  }
+  @include respond-to(mobile) {
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -2494,4 +2649,6 @@ a.link-blue {
 }
 @include respond-to(mobile) {
 }
+
+
 

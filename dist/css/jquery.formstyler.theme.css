@@ -51,10 +51,8 @@
 }
 
 .jq-file {
-  width: 270px;
-  border-radius: 4px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  /*width: 270px;*/
 }
 
 .jq-file input {
@@ -65,54 +63,46 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 100%;
-  height: 34px;
-  padding: 0 80px 0 10px;
-  border: 1px solid #CCC;
-  border-bottom-color: #B3B3B3;
-  border-radius: 4px;
+  height: 22px;
+  padding: 0 0 0 26px;
+  border: 0;
   background: #FFF;
-  -webkit-box-shadow: inset 1px 1px #F1F1F1;
-          box-shadow: inset 1px 1px #F1F1F1;
-  font: 14px/32px Arial, sans-serif;
-  color: #333;
+  font-size: 15px;
+  line-height: 20px;
+  color: #2F2F2F;
 }
 
 .jq-file__browse {
   position: absolute;
   top: 1px;
-  right: 1px;
-  padding: 0 10px;
-  border-left: 1px solid #CCC;
-  border-radius: 0 4px 4px 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#FFF), to(#E6E6E6));
-  background: -o-linear-gradient(#FFF, #E6E6E6);
-  background: linear-gradient(#FFF, #E6E6E6);
-  -webkit-box-shadow: inset 1px -1px #F1F1F1, inset -1px 0 #F1F1F1, 0 1px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: inset 1px -1px #F1F1F1, inset -1px 0 #F1F1F1, 0 1px 2px rgba(0, 0, 0, 0.1);
-  font: 14px/32px Arial, sans-serif;
+  left: 1px;
+  width: 18px;
+  height: 22px;
+  padding: 0;
+  background: url("../img/ico-attach.svg") no-repeat center center;
+  font: 0px/32px Arial, sans-serif;
   color: #333;
-  text-shadow: 1px 1px #FFF;
 }
 
 .jq-file:hover .jq-file__browse {
-  background: -webkit-gradient(linear, left top, left bottom, from(#F6F6F6), to(#E6E6E6));
-  background: -o-linear-gradient(#F6F6F6, #E6E6E6);
-  background: linear-gradient(#F6F6F6, #E6E6E6);
+  /*background: linear-gradient(#F6F6F6, #E6E6E6);*/
 }
 
 .jq-file:active .jq-file__browse {
-  background: #F5F5F5;
-  -webkit-box-shadow: inset 1px 1px 3px #DDD;
-          box-shadow: inset 1px 1px 3px #DDD;
+  /*background: #F5F5F5;
+	box-shadow: inset 1px 1px 3px #DDD;*/
 }
 
-.jq-file.focused .jq-file__name {
-  border: 1px solid #5794BF;
+/*.jq-file.focused .jq-file__name {
+	border: 1px solid #5794BF;
+}*/
+
+.jq-file.disabled .jq-file__browse {
+  opacity: 0.5;
 }
 
 .jq-file.disabled,
-.jq-file.disabled .jq-file__name,
-.jq-file.disabled .jq-file__browse {
+.jq-file.disabled .jq-file__name {
   border-color: #CCC;
   background: #F5F5F5;
   -webkit-box-shadow: none;
