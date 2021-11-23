@@ -1228,7 +1228,9 @@ form {
   text-align: center;
 }
 .link-blue,
-a.link-blue {
+a.link-blue,
+.link-blue:hover,
+a.link-blue:hover {
   color: #004584;
 }
 .opportunity-btn {
@@ -2643,6 +2645,98 @@ a.link-blue {
     height: 50px;
   }
 }
+
+
+.table > div:nth-child(odd) {
+  background: #FAFBFD;
+}
+
+.table-row {
+	display: grid;
+  grid-template-columns: minmax(100px, 2fr) repeat(auto-fit, minmax(100px, 1fr));
+
+  @include respond-to(tablet) {
+    font-size: 14px;
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    border: #8ea2bd 1px solid;
+    border-top: #8ea2bd 0px solid;
+  }
+  @include respond-to(mobile) {
+    font-size: 13px;
+  }
+
+	& > div {
+    border: #8ea2bd 1px solid;
+    padding: 23px 20px;
+    margin: 0 0 -1px -1px;
+
+    @include respond-to(tablet) {
+      border: #8ea2bd 0px solid;
+      padding: 8px 10px;
+      margin: 0;
+    }
+    @include respond-to(mobile) {
+      padding: 5px 10px;
+    }
+  }
+	&.table-row-head > div {
+    background: #004584;
+    color: #fff;
+    font-weight: bold;
+    padding: 36px 20px;
+    @include respond-to(tablet) {
+      display: none;
+      padding: 10px 10px;
+    }
+    @include respond-to(mobile) {
+      padding: 5px 10px;
+    }
+	}
+  &.table-row-head > div.table-row__title {
+    justify-content: flex-start;
+  }
+  &.table-row-head > div > div {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  & > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+	&.table-row-head .ico-table {
+    margin: 0 10px 0 0;
+  }
+  &.table-row-head .ico-table img {
+    max-height: 21px;
+  }
+	&__title {
+		align-self: stretch;
+	}
+  &__title > div {
+    display: flex;
+  }
+	&__data {
+		align-self: stretch;
+    text-align: center;
+  }
+}
+.table-row__nubmer {
+  flex: 0 0 30px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 150%;
+  color: #8EA2BD;
+  padding: 0 3px 0 0;
+}
+.table-row__title .link-blue {
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+
 
 
 @include respond-to(tablet) {
