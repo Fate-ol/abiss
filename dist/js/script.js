@@ -114,7 +114,9 @@ $(document).ready(function(){
   })(jQuery);
 
   $( function() {
-    $( "#datepicker" ).datepicker();
+    $( "#datepicker" ).datepicker({
+      showOtherMonths: true
+    });
   } );
 
 });
