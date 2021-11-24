@@ -811,7 +811,7 @@ form {
   padding: 16px 40px;
   font-weight: bold;
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
 
@@ -842,6 +842,19 @@ form {
     }
   }
 
+  &_white-border {
+    background: #004584;
+    border: #fff 1px solid;
+    color: #fff;
+  }
+  @include respond-to(hov) {
+    &_white-border:hover {
+      background: #FF8515;
+      border: #FF8515 1px solid;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
   &_blue-border {
     background: #fff;
     border: #004584 1px solid;
@@ -1122,6 +1135,29 @@ form {
   @include respond-to(mobile) {
     padding: 35px 0;
   }
+}
+
+.bgblue-content {
+  background: url("../img/bg-kv3.svg") no-repeat right bottom, linear-gradient(104.23deg, #0F4881 27.79%, #0E2C4E 120%);
+  border-radius: 4px;
+  padding: 60px 0;
+  color: #fff;
+
+  @include respond-to(tablet) {
+    padding: 50px 0;
+  }
+  @include respond-to(mobile) {
+    padding: 35px 0;
+  }
+  & a {
+    color: #fff;
+  }
+  @include respond-to(hov) {
+    & a:hover {
+      color: #fff;
+    }
+  }
+  
 }
 
 .opportunity-items {
@@ -1577,8 +1613,14 @@ a.link-blue:hover {
   border-radius: 6px;
   padding: 0 15px;
 	font-size: 15px;
-	line-height: 1.2;
 	color: #2F2F2F;
+}
+.form-value-ico .inp {
+  padding-left: 47px;
+}
+.form-content-one-line .inp {
+  height: 48px;
+  line-height: 46px;
 }
 .area {
   height: 125px;
@@ -1594,8 +1636,21 @@ a.link-blue:hover {
   .form-line-btn {
     text-align: center;
   }
-}  
-
+}
+.ico-form-persona {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 47px;
+  background: url("../img/ico-personal.svg") no-repeat center center;
+}
+.ico-form-mail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 47px;
+  background: url("../img/ico_phone_orange.svg") no-repeat center center;
+}
 .container-in > div:last-of-type {
   margin-bottom: 0 !important;
 }
@@ -2585,7 +2640,8 @@ a.link-blue:hover {
 }
 
 .bg-kv {
-  background: url("../img/bg-kv.png") no-repeat left bottom;
+  background: url("../img/bg-kv.png") no-repeat left bottom,
+  url("../img/bg-kv-top.png") no-repeat top right;
   @include respond-to(tablet) {
     background: transparent;
   }
@@ -2734,6 +2790,106 @@ a.link-blue:hover {
 .table-row__title .link-blue {
   font-weight: bold;
   transition: all 0.3s ease;
+}
+
+
+.filter-years {
+  display: flex;
+  margin-bottom: 32px;
+
+  @include respond-to(tablet) {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  @include respond-to(mobile) {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  &__text {
+    padding: 0 30px 0 0;
+  }
+  &__value nav a {
+    display: inline-block;
+    margin-right: 15px;
+    color: #004584;
+    text-decoration: none;
+  }
+  &__value nav a.active {
+    color: #004584;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  @include respond-to(hov) {
+    &__value nav a:hover {
+      color: #004584;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+
+  @include respond-to(tablet) {
+    margin: 30px 0;
+  }
+  @include respond-to(mobile) {
+    margin: 20px 0;
+  }
+
+  & nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  & nav a {
+    margin: 0 5px;
+    min-width: 40px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 38px;
+    color: #004584;
+    text-decoration: none;
+    border-radius: 20px;
+    border: #004584 1px solid;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  @include respond-to(hov) {
+    & nav a:hover {
+      color: #fff;
+      background: #004584;
+      transition: all 0.3s ease;
+    }  
+  }
+  & nav a.active {
+    color: #fff;
+    background: #004584;
+    transition: all 0.3s ease;
+  }
+  & nav span {
+    margin: 0 5px;
+  }
+}
+.pagination-prev {
+  width: 11px;
+  height: 11px;
+  border-right: 1px solid #004584;
+  border-bottom: 1px solid #004584;
+  transform: rotate(135deg);
+  margin-right: 20px;
+}
+.pagination-next {
+  width: 11px;
+  height: 11px;
+  border-right: 1px solid #004584;
+  border-bottom: 1px solid #004584;
+  transform: rotate(-45deg);
+  margin-left: 20px;
 }
 
 

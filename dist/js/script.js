@@ -112,4 +112,9 @@ $(document).ready(function(){
     
     });
   })(jQuery);
+
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+
 });

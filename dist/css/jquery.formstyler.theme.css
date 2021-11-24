@@ -38,6 +38,21 @@
       transform: rotate(-50deg);
 }
 
+.bgblue-content .jq-checkbox.checked {
+  background: #fff;
+}
+
+.bgblue-content .jq-checkbox.checked .jq-checkbox__div {
+  width: 12px;
+  height: 7px;
+  margin: 3px 0 0 3px;
+  border-bottom: 2px solid #004584;
+  border-left: 2px solid #004584;
+  -webkit-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+      transform: rotate(-50deg);
+}
+
 .jq-radio {
   border-radius: 50%;
 }

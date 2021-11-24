@@ -395,7 +395,7 @@ form {
   padding: 16px 40px;
   font-weight: bold;
   font-size: 14px;
-  line-height: 1.2;
+  line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
 }
@@ -408,6 +408,12 @@ form {
 .btn_blue {
   background: #004584;
   border: #004584 1px solid;
+  color: #fff;
+}
+
+.btn_white-border {
+  background: #004584;
+  border: #fff 1px solid;
   color: #fff;
 }
 
@@ -597,6 +603,18 @@ form {
           box-shadow: 0px 0px 20px rgba(0, 88, 209, 0.2);
   border-radius: 4px;
   padding: 60px 0;
+}
+
+.bgblue-content {
+  background: url("../img/bg-kv3.svg") no-repeat right bottom, -o-linear-gradient(345.77deg, #0F4881 27.79%, #0E2C4E 120%);
+  background: url("../img/bg-kv3.svg") no-repeat right bottom, linear-gradient(104.23deg, #0F4881 27.79%, #0E2C4E 120%);
+  border-radius: 4px;
+  padding: 60px 0;
+  color: #fff;
+}
+
+.bgblue-content a {
+  color: #fff;
 }
 
 .opportunity-items {
@@ -999,8 +1017,16 @@ a.link-blue:hover {
   border-radius: 6px;
   padding: 0 15px;
   font-size: 15px;
-  line-height: 1.2;
   color: #2f2f2f;
+}
+
+.form-value-ico .inp {
+  padding-left: 47px;
+}
+
+.form-content-one-line .inp {
+  height: 48px;
+  line-height: 46px;
 }
 
 .area {
@@ -1012,6 +1038,22 @@ a.link-blue:hover {
   font-size: 15px;
   line-height: 1.2;
   color: #2f2f2f;
+}
+
+.ico-form-persona {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 47px;
+  background: url("../img/ico-personal.svg") no-repeat center center;
+}
+
+.ico-form-mail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 47px;
+  background: url("../img/ico_phone_orange.svg") no-repeat center center;
 }
 
 .container-in > div:last-of-type {
@@ -1798,7 +1840,7 @@ a.link-blue:hover {
 }
 
 .bg-kv {
-  background: url("../img/bg-kv.png") no-repeat left bottom;
+  background: url("../img/bg-kv.png") no-repeat left bottom, url("../img/bg-kv-top.png") no-repeat top right;
 }
 
 .window-out {
@@ -1940,6 +1982,104 @@ a.link-blue:hover {
   transition: all .3s ease;
 }
 
+.filter-years {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.filter-years__text {
+  padding: 0 30px 0 0;
+}
+
+.filter-years__value nav a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #004584;
+  text-decoration: none;
+}
+
+.filter-years__value nav a.active {
+  color: #004584;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 32px 0;
+}
+
+.pagination nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pagination nav a {
+  margin: 0 5px;
+  min-width: 40px;
+  height: 40px;
+  font-size: 14px;
+  line-height: 38px;
+  color: #004584;
+  text-decoration: none;
+  border-radius: 20px;
+  border: #004584 1px solid;
+  text-align: center;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.pagination nav a.active {
+  color: #fff;
+  background: #004584;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.pagination nav span {
+  margin: 0 5px;
+}
+
+.pagination-prev {
+  width: 11px;
+  height: 11px;
+  border-right: 1px solid #004584;
+  border-bottom: 1px solid #004584;
+  -webkit-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+          transform: rotate(135deg);
+  margin-right: 20px;
+}
+
+.pagination-next {
+  width: 11px;
+  height: 11px;
+  border-right: 1px solid #004584;
+  border-bottom: 1px solid #004584;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  margin-left: 20px;
+}
+
 @media (min-width: 768px) {
   a:hover {
     color: #2f2f2f;
@@ -1963,6 +2103,13 @@ a.link-blue:hover {
     text-decoration: none;
   }
 
+  .btn_white-border:hover {
+    background: #ff8515;
+    border: #ff8515 1px solid;
+    color: #fff;
+    text-decoration: none;
+  }
+
   .btn_blue-border:hover {
     background: #004584;
     border: #004584 1px solid;
@@ -1972,6 +2119,10 @@ a.link-blue:hover {
 
   .work-main__content:hover .work-main__head {
     font-weight: bold;
+  }
+
+  .bgblue-content a:hover {
+    color: #fff;
   }
 
   .link-more:hover {
@@ -2007,6 +2158,20 @@ a.link-blue:hover {
   .partners-item a:hover {
     font-weight: bold;
     color: #004584;
+  }
+
+  .filter-years__value nav a:hover {
+    color: #004584;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .pagination nav a:hover {
+    color: #fff;
+    background: #004584;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
   }
 }
 
@@ -2251,6 +2416,10 @@ a.link-blue:hover {
   }
 
   .shadow-content {
+    padding: 50px 0;
+  }
+
+  .bgblue-content {
     padding: 50px 0;
   }
 
@@ -2507,6 +2676,15 @@ a.link-blue:hover {
   .table-row.table-row-head > div {
     display: none;
     padding: 10px 10px;
+  }
+
+  .filter-years {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .pagination {
+    margin: 30px 0;
   }
 }
 
@@ -2986,6 +3164,10 @@ a.link-blue:hover {
     padding: 35px 0;
   }
 
+  .bgblue-content {
+    padding: 35px 0;
+  }
+
   .opportunity-items {
     margin: 20px 0;
     padding: 0 0 20px 0;
@@ -3341,5 +3523,14 @@ a.link-blue:hover {
 
   .table-row.table-row-head > div {
     padding: 5px 10px;
+  }
+
+  .filter-years {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .pagination {
+    margin: 20px 0;
   }
 }
