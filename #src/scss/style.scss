@@ -129,6 +129,9 @@ form {
 .text-blue {
   color: #0F233F;
 }
+.text-lightblue {
+  color: #004584;
+}
 
 .w-100 {
   width: 100% !important;
@@ -1750,6 +1753,13 @@ a.link-blue:hover {
   height: 12px;
   background: url("../img/ico_mail.svg") no-repeat center;
 }
+.p-ico-email-orange::before {
+  top: 5px;
+  left: 0;
+  width: 15px;
+  height: 12px;
+  background: url("../img/ico_mail_orange.svg") no-repeat center;
+}
 
 .footer-nav {
   position: relative;
@@ -1947,6 +1957,7 @@ a.link-blue:hover {
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid #004584;
+    box-shadow: #004584 1px 1px 1px inset, #004584 -1px -1px 1px inset;
   }
 
   & > ul {
@@ -2624,14 +2635,40 @@ a.link-blue:hover {
     box-shadow: 0px 0px 10px rgba(1, 70, 166, 0.15);
     border-radius: 4px;
     text-align: center;
+
+    @include respond-to(tablet) {
+      padding: 30px 20px;
+    }
+    @include respond-to(mobile) {
+      padding: 20px 15px;
+    }
   }
   &__pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0 0 28px 0;
+    @include respond-to(tablet) {
+      margin: 0 0 23px 0;
+    }
+    @include respond-to(mobile) {
+      margin: 0 0 18px 0;
+    }
   }
-
+  &__pic img {
+    max-width: 100%;
+    max-height: 100%;
+  }
   &__content {
     flex: 1 1 0;
     margin: 0 0 33px 0;
+
+    @include respond-to(tablet) {
+      margin: 0 0 28px 0;
+    }
+    @include respond-to(mobile) {
+      margin: 0 0 20px 0;
+    }
   }
 
   &__head {
@@ -2945,10 +2982,13 @@ a.link-blue:hover {
   max-width: 100%;
 }
 
+.tile-press-kit .tile-shadow__pic {
+  height: 182px;
+  @include respond-to(tablet) {
+    height: 100px;
+  }
+}
 @include respond-to(tablet) {
 }
 @include respond-to(mobile) {
 }
-
-
-

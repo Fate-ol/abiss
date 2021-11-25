@@ -130,6 +130,10 @@ form {
   color: #0f233f;
 }
 
+.text-lightblue {
+  color: #004584;
+}
+
 .w-100 {
   width: 100% !important;
 }
@@ -1149,6 +1153,14 @@ a.link-blue:hover {
   background: url("../img/ico_mail.svg") no-repeat center;
 }
 
+.p-ico-email-orange::before {
+  top: 5px;
+  left: 0;
+  width: 15px;
+  height: 12px;
+  background: url("../img/ico_mail_orange.svg") no-repeat center;
+}
+
 .footer-nav {
   position: relative;
 }
@@ -1847,7 +1859,21 @@ a.link-blue:hover {
 }
 
 .tile-shadow__pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 0 28px 0;
+}
+
+.tile-shadow__pic img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .tile-shadow__content {
@@ -2130,6 +2156,10 @@ a.link-blue:hover {
 
 .news-item-content img {
   max-width: 100%;
+}
+
+.tile-press-kit .tile-shadow__pic {
+  height: 182px;
 }
 
 @media (min-width: 768px) {
@@ -2696,6 +2726,18 @@ a.link-blue:hover {
     margin-bottom: 15px;
   }
 
+  .tile-shadow__item > div {
+    padding: 30px 20px;
+  }
+
+  .tile-shadow__pic {
+    margin: 0 0 23px 0;
+  }
+
+  .tile-shadow__content {
+    margin: 0 0 28px 0;
+  }
+
   .tile-shadow__head {
     font-size: 16px;
   }
@@ -2745,6 +2787,10 @@ a.link-blue:hover {
 
   .news-image {
     margin: 30px 0;
+  }
+
+  .tile-press-kit .tile-shadow__pic {
+    height: 100px;
   }
 }
 
@@ -3374,6 +3420,8 @@ a.link-blue:hover {
     border-radius: 6px;
     overflow: hidden;
     border: 1px solid #004584;
+    -webkit-box-shadow: #004584 1px 1px 1px inset,#004584 -1px -1px 1px inset;
+            box-shadow: #004584 1px 1px 1px inset,#004584 -1px -1px 1px inset;
   }
 
   .page-nav > ul {
@@ -3550,6 +3598,18 @@ a.link-blue:hover {
   .partners-item__pic {
     height: 40px;
     margin-bottom: 10px;
+  }
+
+  .tile-shadow__item > div {
+    padding: 20px 15px;
+  }
+
+  .tile-shadow__pic {
+    margin: 0 0 18px 0;
+  }
+
+  .tile-shadow__content {
+    margin: 0 0 20px 0;
   }
 
   .tile-shadow__head {
